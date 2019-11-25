@@ -1,0 +1,40 @@
+<div>
+    <label>Search</label>
+    <input type="text" class="form-control" [(ngModel)]="term">
+<br>
+</div>
+<div class="container-fluid">
+    <table class="table table-bordered table-stripped">
+        <thead class="table-info">
+            <td>title</td>
+            <td>url</td>
+            <td>created_at</td>
+            <td>author</td>
+        </thead>
+        <tbody>
+            <tr class="wrow" *ngFor="let data of datasave|custom:term" data-toggle="modal" data-target="#myModal" (click)="edit(data)">
+                <td>{{data.title}}</td>
+                <td>{{data.url}}</td>
+                <td>{{data.created_at}}</td>
+                <td>{{data.author}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="modal" id="myModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4>Modal Heading</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <pre>{{model|json}}</pre>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" data-dismiss="modal">close</button>
+            </div>
+        </div>
+    </div>
+</div>
