@@ -3,7 +3,6 @@ import {ServiceService} from '../service.service';
 import {switchMap} from 'rxjs/operators';
 import { Subscription, timer } from 'rxjs';
 
-
 @Component({
   selector: 'app-test',
   templateUrl: './test.component.html',
